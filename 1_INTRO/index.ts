@@ -1,7 +1,7 @@
 const numberOne: number = 1;
 const numberTwo: number = 2;
 
-function greeting(one: any, two: any) {
+function greeting(one: any, two: any): void {
     console.log(`Numero ${one}, ${two}`);
     let isNumber: boolean = typeof one === 'number' ? true : false ? typeof two === 'number' ? true : false : false;
 
@@ -16,5 +16,4 @@ function some(one: number, two: number): number {
 }
 
 greeting(numberOne, numberTwo);
-
 

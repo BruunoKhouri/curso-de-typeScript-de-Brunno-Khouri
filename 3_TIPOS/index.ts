@@ -80,7 +80,6 @@ const p = document.getElementById("some-p");
 
 console.log(p!.innerHTML);
 
-
 //**Bigint */
 // es 2020
 
@@ -93,8 +92,8 @@ console.log(typeof n);
 let symbolA: symbol = Symbol("a");
 let symbolB = Symbol("a");
 
-console.log(symbolA === symbolB);
-console.log(symbolA != symbolB);
+console.log(symbolA === symbolB); //false
+console.log(symbolA != symbolB); //true
 console.log(symbolA, symbolB);
 
 
