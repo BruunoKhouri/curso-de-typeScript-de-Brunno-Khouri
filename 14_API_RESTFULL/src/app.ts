@@ -1,6 +1,9 @@
+require("dotenv").config();
 import express from "express";
 import config from "config";
+// router
 import router from "./router";
+// db mongo
 import db from "../config/db"
 
 const app = express();
