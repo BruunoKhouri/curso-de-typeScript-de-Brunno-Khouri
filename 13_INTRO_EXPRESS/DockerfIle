@@ -1,0 +1,18 @@
+FROM node:16.13.1 as node 
+
+# Inicialização
+# Para iniciar um projeto com Express e TypeScript npm init;
+# E também iniciar com npx tsc -init
+# npm install @types/express @types/node ts-node-dev typescript --save-dev
+# npm install express
+
+# Configure o package.json, para receber seu script de inicializaçao do app
+# "dev": "ts-node-dev --respawn --transpile-only src/app.ts"
+
+
+#Utilizando o Express
+
+# Para utilizar o express vamos importar o pacote;
+# E criar ativa-lo em uma nova variavel, geralmente chamada de app;
+# Podemos criar um rota que retorna uma mensagem;
+# Definir uma porta para a aplicação;
