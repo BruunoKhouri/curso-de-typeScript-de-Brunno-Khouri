@@ -4,16 +4,15 @@ const path = require('path');
 // Configuração do Knex
 const config = {
   client: 'pg',
-  connection: '',
+  connection: 'postgres://postgres:test@localhost/notro?sslmode=disable',
 };
 
 const knexInstance = knex(config);
 
-// Função para limpar as tabelas antes de executar os seeds
 async function truncateTables() {
   try {
-    // Lista das tabelas que deseja limpar
-    const tables = ['cities'];
+    
+    const tables = ['countries','states', 'cities'];
 
     for (const table of tables) {
       await knexInstance.raw(`TRUNCATE TABLE ${table} CASCADE`);
@@ -22,17 +21,17 @@ async function truncateTables() {
   } catch (error) {
     console.error('Erro ao limpar as tabelas:', error);
     knexInstance.destroy();
-    process.exit(1); // Encerrar o script em caso de erro
+    process.exit(1); 
   }
 }
 
-// Caminho para o diretório de seeds
+
 const seedPath = path.join(__dirname, 'seeds');
 
-// Executar o truncate antes dos seeds
+
 truncateTables()
   .then(() => {
-    // Executar os seeds após o truncate
+   
     return knexInstance.seed.run({ directory: seedPath });
   })
   .then(() => {

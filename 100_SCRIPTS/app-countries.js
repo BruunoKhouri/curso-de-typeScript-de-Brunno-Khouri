@@ -23,13 +23,9 @@ function generateSeedFunction(data, tableName) {
       native: item.native.toString(),
       region: item.region.toString(),
       subregion: item.subregion.toString(),
-      timezones: item.timezones.toString(),
       latitude: parseFloat(item.latitude),
-      longitude: parseFloat(item.longitude),
-      emoji: item.emoji.toString(),
-      emojiU: item.emojiU.toString(),
+      longitude: parseFloat(item.longitude),      
       created_at: new Date().toISOString(),
-
     };
 
     seedFunction += `    {\n`;
